@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<HTML LANG="en-US">
+
+<HEAD>
+    <meta charset="utf-8">
+
+    <!-- What I am adding to make it more Smart View -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/img/csui/themes/carbonfiber/init.css">
+    <link rel="stylesheet" href="/img/csui/themes/carbonfiber/theme.css">
+    <link rel="icon" type="image/vnd.microsoft.icon"
+        href="/img/csui/themes/carbonfiber/image/favicon.ico?v=1404.0.3583009751">
+
+    <link rel="prefetch" href="/img/csui/bundles/csui-libraries.css?v=1404.0.3583009751">
+    <link rel="prefetch" href="/img/csui/themes/carbonfiber/fonts/OTS_webfonts/OpenTextSans_W_Lt.woff2">
+    <link rel="prefetch" href="/img/csui/themes/carbonfiber/fonts/OTS_webfonts/OpenTextSans_W_Rg.woff2">
+    <link rel="prefetch" href="/img/csui/themes/carbonfiber/fonts/OTS_webfonts/OpenTextSans_W_Bd.woff2">
+    <link type="text/css" rel="stylesheet" href="/img/csui/bundles/csui-app.css">
+    <link type="text/css" rel="stylesheet" href="/img/webwork/bundles/workflow-all.css">
+    <link type="text/css" rel="stylesheet" href="/img/csui/bundles/csui-forms.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+    <title>Workflow Step : Fancy Pants</title>
+    <style>
+        .h4.dlformheader {
+            color: #00498f;
+            font-size: 18px;
+            line-height: 1.3;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .dlformlabel {
+            display: inline-block;
+            width: 40%;
+            text-align: right;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 28px;
+            line-height: 28px;
+            padding: 0 16px 0 0;
+            vertical-align: top;
+        }
+
+        span.binf-glyphicon.binf-glyphicon-star {
+            font-size: 5px;
+            color: #df3324;
+            vertical-align: text-top;
+        }
+
+        div.dltextfieldValidate {
+            max-width: 420px;
+            width: fit-content;
+            display: inline-block;
+            white-space: normal;
+            word-wrap: break-word;
+            margin-top: 8px;
+            background: #fff;
+            color: #df3324;
+            font-size: 11px;
+            line-height: 16px;
+            border-radius: 2px;
+            border-left: 2px solid #df3324;
+            padding: 0 8px;
+            box-shadow: 0 0 4px 0 rgb(0 0 0 / 30%);
+            margin-left: 20%;
+        }
+    </style>
+
+
+</HEAD>
+
+<SCRIPT SRC="[LL_SUPPORTPATH /]core/ajax_dhtml_util.js"></SCRIPT>
+<SCRIPT SRC="[LL_SUPPORTPATH /]webform/formssupport.js"></SCRIPT>
+
+<body class="binf-widgets">
+    <div role="main">
+        <nav class="csui-navbar binf-navbar binf-navbar-default zero-gutter" aria-label="Main navigation">
+            <div class="binf-container-fluid" role="menubar">
+                <span class="binf-navbar-brand binf-collapse binf-navbar-collapse csui-logo-center">
+                    <span class="csui-logo binf-logo-hide">
+                        <span class="csui-logo-image"></span>
+                    </span>
+                </span>
+                <div class="binf-nav binf-navbar-nav binf-navbar-left">
+
+                    <div class="csui-home-item" role="menuitem"><a href="#" title="Home" aria-label="Home page"
+                            class="csui-home csui-acc-tab-region csui-acc-focusable-active" tabindex="0">
+                            <div class="csui-icon-home" title="Home"></div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="cs-perspective-panel">
+        <form id="dlform">
+            <INPUT TYPE="hidden" NAME="LL_FUNC_VALUES" ID="WorkflowValues" VALUE="[LL_FUNC_VALUES /]">
+            <div class="csui-perspective-view">
+                <div class="cs-perspective cs-grid-perspective grid-rows cs-grid binf-container-fluid">
+                    <div class="binf-row">
+                        <div class="binf-col-md-12 row-xs-full">
+                            <div class="workitem-view">
+                                <div class="workitem-row binf-row">
+                                    <div class="workitem-view-left binf-col-md-8 binf-col-sm-8 binf-col-xs-12">
+                                        <!-- Workflow Header -->
+                                        <div class="workitem-header">
+                                            <div class="csui-acc-tab-region csui-acc-tab-region-active"> <span
+                                                    class="tile-type-icon cs-icon-left title-icon assignment-workflow"></span>
+                                                <div class="tile-title">
+                                                    <h2 title="Fancy Pants" tabindex="0"
+                                                        class="csui-acc-focusable-active">
+                                                        Fancy Pants</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Workflow Body-->
+                                        <div class="workitem-body">
+                                            <div class="workflow-workitem-body">
+                                                <div class="workitem-body-row binf-row">
+                                                    <div class="workitem-properties">
+                                                        <div
+                                                            class="workflow-workitem-properties csui-perfect-scrolling ps-container">
+                                                            <div class="workitem-forms">
+                                                                <div class="workflow-workitem-form cs-formview-wrapper">
+                                                                    <div class="metadata-validation-error"
+                                                                        id="dlErrorMessage" style="display: none;">
+                                                                        <span class="validation-error-message">Required
+                                                                            fields must be filled</span>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="cs-form cs-form-create cs-form-show-helper workitem-with-empty-instructions">
+                                                                        <div class="binf-row">
+                                                                            <div class="binf-col-md-12">
+                                                                                <h4 class="dlformheader">Form Fields
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div
+                                                                                class="binf-col-md-12 cs-form-doublecolumn">
+                                                                                <!-- Text Field 1 -->
+                                                                                <div class="csui-field-text">
+                                                                                    <div class="binf-form-group">
+                                                                                        <label
+                                                                                            class="binf-control-label alpaca-control-label binf-col-sm-3 dlformlabel"
+                                                                                            title="Text Field 1">
+                                                                                            <span
+                                                                                                class="binf-glyphicon binf-glyphicon-star dlrequired"></span>
+                                                                                            Text Field 1
+                                                                                        </label>
+                                                                                        <div class="binf-col-sm-9">
+                                                                                            <div
+                                                                                                class="cs-formfield cs-textfield cs-formfield-invalid">
+                                                                                                <div
+                                                                                                    class="cs-field-write">
+                                                                                                    <div
+                                                                                                        class="cs-field-write-inner">
+                                                                                                        <input
+                                                                                                            type="text"
+                                                                                                            name="Text Field 1"
+                                                                                                            id="textfield1"
+                                                                                                            title="Text Field 1"
+                                                                                                            class="valueEditable dlvalidate"
+                                                                                                            placeholder="Text Field 1"
+                                                                                                            maxlength="32">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div style="clear:both;">
+                                                                                        </div>
+                                                                                        <div class="dltextfieldValidate"
+                                                                                            role="alert"
+                                                                                            style="display: none;"
+                                                                                            id="textfield1Validate">
+                                                                                            <i
+                                                                                                class="binf-glyphicon binf-glyphicon-exclamation-sign"></i>This
+                                                                                            is a required field.
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                                <!-- Text Field 2 -->
+                                                                                <div class="csui-field-text">
+                                                                                    <div class="binf-form-group">
+                                                                                        <label
+                                                                                            class="binf-control-label binf-col-sm-3 dlformlabel"
+                                                                                            title="Text Field 1">
+                                                                                            <span
+                                                                                                class="binf-glyphicon binf-glyphicon-star dlrequired"></span>Text
+                                                                                            Field 2
+                                                                                        </label>
+                                                                                        <div class="binf-col-sm-9">
+                                                                                            <div
+                                                                                                class="cs-formfield cs-textfield ">
+                                                                                                <div
+                                                                                                    class="cs-field-write">
+                                                                                                    <div
+                                                                                                        class="cs-field-write-inner">
+                                                                                                        <input
+                                                                                                            type="text"
+                                                                                                            name="Text Field 2"
+                                                                                                            title="Text Field 2"
+                                                                                                            id="textfield2"
+                                                                                                            class="valueEditable dlvalidate"
+                                                                                                            placeholder="Text Field 2"
+                                                                                                            maxlength="32">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        </div>
+                                                                                        <div style="clear:both;">
+                                                                                        </div>
+                                                                                        <div class="dltextfieldValidate"
+                                                                                            role="alert"
+                                                                                            style="display: none;"
+                                                                                            id="textfield2Validate">
+                                                                                            <i
+                                                                                                class="binf-glyphicon binf-glyphicon-exclamation-sign"></i>This
+                                                                                            is a required field.
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Attachment Pane-->
+                                    <aside role="complementary">
+                                        <div class="workitem-tabpanel binf-col-md-4 binf-col-sm-4">
+                                            <div class="workitem-tabpanel-header"></div>
+                                            <div class="workitem-tabpanel-content">
+                                                <div class="cs-tabpanel tab-panel csui-acc-tab-region">
+                                                    <div class="tab-links">
+                                                        <div class="tab-links-bar">
+                                                            <span class="fadeout"></span>
+                                                            <ul class="binf-nav binf-nav-pills" role="tablist">
+                                                                <li data-csui-tab="Attachments" role="presentation"
+                                                                    class="binf-active"><a role="tab"
+                                                                        aria-selected="true"
+                                                                        aria-controls="cstab-uid-799"
+                                                                        class="cs-tablink csui-acc-focusable-active"
+                                                                        data-binf-toggle="tab" title="Attachments"
+                                                                        tabindex="0">
+                                                                        <span class="cs-tablink-text">Attachments</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="binf-tab-content">
+                                                        <div role="tabpanel"
+                                                            class="binf-tab-pane binf-fade binf-in binf-active">
+                                                            <div class="workitem-attachments">
+                                                                <div class="workitem-attachment-toolbar">
+                                                                    <div class="csui-acc-tab-region">
+                                                                        <div
+                                                                            class="workitem-attachment-toolbar-view tile-nav">
+                                                                            <div
+                                                                                class="workitem-attachment-toolbar-add">
+                                                                                <br>
+                                                                                <input type="hidden" name="attachmentid"
+                                                                                    id="attachmentid">
+                                                                                <input type="file"
+                                                                                    name="Upload Attachment"
+                                                                                    id="attachDocument"
+                                                                                    style="display:none" multiple>
+                                                                                <a href="#"
+                                                                                    class="binf-dropdown-toggle csui-acc-focusable"
+                                                                                    title="Add attachment"
+                                                                                    aria-label="Add attachment"
+                                                                                    onclick="uploadFileClick()">
+                                                                                    <span
+                                                                                        class="icon icon-toolbarAdd"></span>
+                                                                                </a>
+
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="workitem-attachment-list">
+                                                                    <div
+                                                                        class="workflow-attachmentlist-form csui-acc-tab-region">
+                                                                        <div id="noAttachments"
+                                                                            class="workitem-dragdrop-area workitem-dragdrop-area-empty"
+                                                                            style="display: none;">
+                                                                            <div class="workitem-dragdrop-icon">
+                                                                                <p
+                                                                                    class="work-item-attachments-draganddrop">
+                                                                                    No Files Attached
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="displayAttachments"
+                                                                            style="display: none;">
+                                                                            Files Attached.
+                                                                            <ul class="workitem-attachments-itemlist">
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="load-container"
+                                                                            id="loadingAttachments">
+                                                                            <div class="outer-border">
+                                                                                <div class="loader"></div>
+                                                                                <div class="binf-sr-only"
+                                                                                    aria-live="polite" aria-busy="true">
+                                                                                    Loading Attachment Volumne
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+
+                                <footer role="contentinfo">
+                                    <div class="workitem-footer cs-dialog binf-modal-footer">
+                                        <div>
+                                            <button class="binf-btn binf-btn-default" title="Start"
+                                                id="startWorkflow">Start</button>
+                                            <button class="binf-btn binf-btn-default" title="Cancel"
+                                                onclick="goBack();">Cancel</button>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        function ready(fn) {
+            if (document.readyState != 'loading') {
+                fn();
+            } else {
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+        }
+
+        ready(() => {
+            const workflowSettings = parseFuncValues();
+            const otcsticket = Cookies.get('LLCookie');
+            console.log(otcsticket);
+            const getWorkflowAttributesUrl = `/otcs/cs.exe/api/v1/forms/draftprocesses/update?draftprocess_id=${workflowSettings.LL_MapID}`;
+
+            // Prevent Submit. 
+            document.getElementById('dlform').addEventListener('submit', (event) => {
+                event.preventDefault();
+            })
+
+
+            httpRequest('GET', getWorkflowAttributesUrl, otcsticket, null, null)
+                .then((response) => {
+                    // Set Attachment ID
+                    const attachmentid = JSON.parse(response).data.data_packages[0].data.attachment_folder_id; // They make it easy to find!!
+                    const formData = JSON.parse(response).forms[0];
+                    const attachmentidForm = document.getElementById('attachmentid').value = attachmentid;
+
+                    // Get nodes from attachment volumes
+                    displayAttachments(attachmentid, otcsticket);
+
+                    // Add Event Listener to the File Control
+                    const fileControl = document.getElementById('attachDocument');
+                    fileControl.addEventListener('change', (event) => {
+                        // Handling Multiple File Uploads
+                        const files = event.target.files;
+                        processAttachments(files, attachmentid, otcsticket)
+                    });
+
+                    const validateForms = document.getElementsByClassName('dlvalidate');
+                    Array.from(validateForms).forEach((element) => {
+                        element.addEventListener('input', validateField);
+                        element.addEventListener('focusout', validateField);
+                    });
+                    // Submit Form
+                    const submitControl = document.getElementById('startWorkflow');
+                    submitControl.addEventListener('submit', (event) => {
+                        dlSubmitForm(formData, attachmentid, workflowSettings, otcsticket);
+                    });
+                    submitControl.addEventListener('click', (event) => {
+                        dlSubmitForm(formData, attachmentid, workflowSettings, otcsticket);
+                    });
+
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+
+        });
+
+        // Interactive Validation
+        function validateField(event) {
+            const value = event.target.value;
+            const errorValue = `${event.target.getAttribute('id')}Validate`;
+            const errorMessage = document.getElementById(errorValue);
+            if (!value) {
+                // Trigger Error (this would be easier with something like Angular)
+                errorMessage.style.display = '';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        }
+
+        // Form Validation and Submittion
+        async function dlSubmitForm(formData, attachmentid, workflowSettings, otcsticket) {
+            // Get Attachments
+            console.log(attachmentid, otcsticket);
+            const errorContainer = document.getElementById('dlErrorMessage');
+            errorContainer.style.display = 'none'; // Reset State
+            const url = `/otcs/cs.exe/api/v2/nodes/${attachmentid}/nodes?fields=properties{id}`;
+            const request = await httpRequest('GET', url, otcsticket, null, null);
+            const result = JSON.parse(request);
+            const attachments = result.results;
+            let formErrors = [];
+
+
+            if (attachments.length === 0) {
+                // No Attachments - Issue Alert
+                let noAttachmentMessage = document.createElement('span');
+                noAttachmentMessage.setAttribute('class', 'validation-error-message');
+                noAttachmentMessage.innerText = 'No document attached. Please attach a document';
+                errorContainer.innerHTML = '';
+                errorContainer.appendChild(noAttachmentMessage);
+                errorContainer.style.display = '';
+
+            } else {
+                // Proceed to check form
+                const validateForms = document.getElementsByClassName('dlvalidate');
+                Array.from(validateForms).forEach(function (element) {
+                    const formField = `${element.id}Validate`;
+                    const errorMessage = document.getElementById(formField);
+                    const value = element.value;
+                    if (!value) {
+                        // Trigger Error (this would be easier with something like Angular)
+                        errorMessage.style.display = '';
+
+                        // Main Error Message
+                        let noAttachmentMessage = document.createElement('span');
+                        noAttachmentMessage.setAttribute('class', 'validation-error-message');
+                        noAttachmentMessage.innerText = 'Required fields have not been populated';
+                        errorContainer.innerHTML = '';
+                        errorContainer.appendChild(noAttachmentMessage);
+                        errorContainer.style.display = '';
+                        formErrors.push(formField);
+                    } else {
+                        errorMessage.style.display = 'none';
+                    }
+                });
+
+                if (formErrors.length === 0) {
+                    // Create Form Submittion Object
+                    console.log('Submit Form');
+                    const formupdate = {
+                        action: 'formUpdate',
+                        values: {}
+                    }
+
+                    // Map the REST API to Form Elements
+                    const formSchema = formData.schema.properties;
+                    const formFieldNames = Object.keys(formSchema);
+                    for (let fn = 0; fn < formFieldNames.length; fn++) {
+                        const fieldName = formFieldNames[fn];
+                        const fieldAtts = formSchema[fieldName];
+                        const fieldElement = document.getElementsByName(fieldAtts.title);
+                        formupdate.values[fieldName] = fieldElement[0].value
+                    }
+
+                    const workflowurl = `/otcs/cs.exe/api/v2/draftprocesses/${workflowSettings.LL_MapID}`;
+                    const formUpdateData = new FormData();
+                    formUpdateData.append('body', JSON.stringify(formupdate));
+
+                    const formInitiateData = new FormData();
+                    formInitiateData.append('body', JSON.stringify({ action: 'Initiate', comment: '' }));
+
+                    httpRequest('PUT', workflowurl, otcsticket, formUpdateData, null)
+                        .then((result) => {
+                            httpRequest('PUT', workflowurl, otcsticket, formInitiateData, null)
+                                .then(() => {
+                                    goBack();
+                                })
+                                .catch(error => {
+                                    console.error(error);
+                                })
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        })
+                }
+            }
+        }
+
+        // File Upload Functions
+        function uploadFileClick() {
+            const fileControl = document.getElementById('attachDocument').click();
+        }
+
+
+        async function processAttachments(files, attachmentid, otcsticket) {
+            // Async Function to wrap the asynchronous actions
+            try {
+                // Setting Visual State of Attachment Volume
+                const noAttachments = document.getElementById('noAttachments');
+                const displayAttachments = document.getElementById('displayAttachments');
+                const loading = document.getElementById('loadingAttachments');
+
+                // Set Initiatial State
+                loading.style.display = '';
+                noAttachments.style.display = 'none';
+                displayAttachments.style.display = 'none';
+                await fileUpload(files, attachmentid, otcsticket);
+            } catch (error) {
+                console.error('processAttachments: Error processing attachments');
+                console.error(error);
+            }
+
+        }
+
+
+        async function fileUpload(filelist, attachmentid, otcsticket) {
+            const files = Array.from(filelist); // Convert to Array as I dont need the FileList functionality
+            for (const [fIndex, file] of files.entries()) {
+                const fileCheckValue = {
+                    parent_id: attachmentid,
+                    names: [file.name]
+                };
+                const fileCheckFormData = new FormData();
+                fileCheckFormData.append('body', JSON.stringify(fileCheckValue));
+                const fileCheckUrl = '/otcs/cs.exe/api/v1/validation/nodes';
+                const result = await httpRequest('POST', fileCheckUrl, otcsticket, fileCheckFormData, null);
+                const fileCheckResult = JSON.parse(result);
+                if (fileCheckResult.results && fileCheckResult.results[0].id) {
+                    // Document Found, Adding Version
+                    const documentid = data.results[0].id;
+                    await addVersion(documentid, fIndex, otcsticket);
+                } else {
+                    // Document not Found, uploading Document
+                    const fileFormValues = {
+                        type: 144,
+                        name: file.name,
+                        parent_id: attachmentid
+                    };
+                    await addDocument(fileFormValues, fIndex, otcsticket);
+                }
+            }
+            displayAttachments(attachmentid, otcsticket);
+        }
+
+        function addDocument(fileValues, fIndex, otcsticket) {
+            return new Promise((ok, fail) => {
+                const uploadurl = `/otcs/cs.exe/api/v1/nodes`;
+                const data = new FormData();
+                data.set('body', JSON.stringify(fileValues));
+                data.set('file', document.getElementById('attachDocument').files[fIndex]);
+                httpRequest('POST', uploadurl, otcsticket, data, { fileupload: true })
+                    .then((result) => {
+                        console.info('Document Added');
+                        ok(JSON.parse(result));
+                    })
+                    .catch(error => {
+                        console.error('addDocument: Error Adding Document');
+                        console.error(error);
+                        fail(error);
+                    });
+            });
+        }
+
+        function addVersion(documentid, fIndex, otcsticket) {
+            return new Promise((ok, fail) => {
+                const uploadurl = `/otcs/cs.exe/api/v1/nodes/${documentid}/versions`;
+                const data = new FormData();
+                data.append("id", documentid);
+                data.set('file', document.getElementById('attachDocument').files[fIndex]);
+                httpRequest('POST', uploadurl, otcsticket, data, { fileupload: true })
+                    .then((result) => {
+                        console.info('Version Added');
+                        ok(JSON.parse(result));
+                    })
+                    .catch(error => {
+                        console.error('addVersion: Error Adding Version');
+                        console.error(error);
+                        fail(error);
+                    });
+            });
+        }
+
+        async function displayAttachments(attachmentid, otcsticket) {
+            const url = `/otcs/cs.exe/api/v2/nodes/${attachmentid}/nodes?fields=properties{id,name, mime_type}`;
+            const noAttachments = document.getElementById('noAttachments');
+            const displayAttachments = document.getElementById('displayAttachments');
+            const loading = document.getElementById('loadingAttachments');
+
+            // Set Initiatial State
+            loading.style.display = '';
+            noAttachments.style.display = 'none';
+            displayAttachments.style.display = 'none';
+
+            const request = await httpRequest('GET', url, otcsticket, null, null);
+            const result = JSON.parse(request);
+            const attachments = result.results;
+            if (attachments.length === 0) {
+                loading.style.display = 'none';
+                noAttachments.style.display = '';
+            } else {
+                // Render List
+                const nodeList = renderList(attachments);
+
+                // Show Lists
+                loading.style.display = 'none';
+                displayAttachments.innerHTML = '';
+                displayAttachments.appendChild(nodeList);
+                displayAttachments.style.display = '';
+            }
+        }
+
+        function renderList(attachments) {
+            const ul = document.createElement('ul');
+            ul.setAttribute('class', 'workitem-attachments-itemlist');
+
+            for (let index = 0; index < attachments.length; index++) {
+                const attachment = attachments[index];
+                const li = document.createElement('li');
+
+                const attachmentsitem = document.createElement('div');
+                attachmentsitem.setAttribute('class', 'workitem-attachments-item');
+
+                const attachmentsicon = document.createElement('div');
+                attachmentsicon.setAttribute('class', 'workitem-attachments-icon');
+                const attachmentsiconSpan = document.createElement('span');
+                attachmentsiconSpan.setAttribute('class', 'csui-icon-group');
+                attachmentsiconSpan.setAttribute('title', 'Document');
+                attachmentsiconSpan.setAttribute('aria-label', 'Document');
+                attachmentsiconSpan.innerHTML = svgDocument();
+
+                // Bundle Up Icon
+                attachmentsicon.appendChild(attachmentsiconSpan);
+
+
+                // Attachment Info
+                const attachmentsinfo = document.createElement('div');
+                attachmentsinfo.setAttribute('class', 'workitem-attachments-info');
+                const attachmentsinfoLink = document.createElement('a');
+                attachmentsinfoLink.setAttribute('class', 'workitem-attachments-name csui-acc-focusable-active');
+                attachmentsinfoLink.setAttribute('href', `/otcs/cs.exe/app/nodes/${attachment.data.properties.id}`);
+                attachmentsinfoLink.setAttribute('target', 'blank');
+                attachmentsinfoLink.setAttribute('aria-label', attachment.data.properties.name);
+
+                const attachmentName = document.createElement('div');
+                attachmentName.setAttribute('class', 'workitem-attachment-name');
+                attachmentName.setAttribute('title', attachment.data.properties.name);
+                attachmentName.innerText = attachment.data.properties.name;
+
+                // Bundle up Attachment Info
+                attachmentsinfoLink.appendChild(attachmentName);
+                attachmentsinfo.appendChild(attachmentsinfoLink);
+
+                // Bundle Up Attachment Item
+                attachmentsitem.appendChild(attachmentsicon);
+                attachmentsitem.appendChild(attachmentsinfo);
+
+
+                // Bundle Up List Item
+                li.appendChild(attachmentsitem);
+
+
+                // Add to Unordered List
+                ul.appendChild(li);
+            }
+
+            return ul;
+        }
+
+        // Get Workflow Settings
+        function parseFuncValues() {
+            // LL_FUNC_VALUES
+            let values = document.getElementById('WorkflowValues').getAttribute('value');
+            let funcValues = {};
+            values = values.replace('A<1,?,', '');
+            values = values.substring(0, values.length - 1);
+            values = values.split(',')
+            values = values.map((value) => {
+                value = value.split('=');
+                funcValues[value[0].replace(/\'/g, '')] = value[1].replace(/\'/g, '')
+            });
+            return funcValues;
+        }
+
+        // HTTP Requests
+        function httpRequest(method, url, ticket, body, options) {
+            return new Promise((ok, fail) => {
+                if (options === 'undefined' || options === null) {
+                    options = {
+                        fileupload: false
+                    }
+                }
+                let request = new XMLHttpRequest();
+                request.open(method, url);
+                if (method !== 'GET') {
+                    request.overrideMimeType("multipart/form-data");
+                }
+
+
+                request.setRequestHeader('OTCSTicket', ticket);
+                request.onreadystatechange = () => {
+                    if (request.readyState == 4) {
+                        if (request.status == 200 || request.status == 0) {
+                            ok(request.response);
+                        } else {
+                            fail(Error(request.statusText));
+                        }
+                    }
+                };
+                if (body) {
+                    request.send(body);
+                } else {
+                    request.send();
+                }
+            });
+        }
+
+        function goBack() {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const nextUrl = urlParams.get('nexturl');
+            const getUrl = window.location;
+            window.location.href = `${getUrl.protocol}//${getUrl.host}${nextUrl}`;
+        }
+
+        function svgDocument() {
+            return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve" class="csui-icon-v2 csui-icon-v2-size-normal csui-icon-v2__csui_mime_paper"><g></g><g></g><g><g><g><path fill="#0072AA" d="M7,31.5c-1.93,0-3.5-1.57-3.5-3.5V4c0-1.93,1.57-3.5,3.5-3.5h15.207L28.5,6.793V28 c0,1.93-1.57,3.5-3.5,3.5H7z"></path><path fill="#FFFFFF" d="M22,1l6,6v21c0,1.657-1.343,3-3,3H7c-1.657,0-3-1.343-3-3V4c0-1.657,1.343-3,3-3H22 M22.414,0H22H7 C4.794,0,3,1.794,3,4v24c0,2.206,1.794,4,4,4h18c2.206,0,4-1.794,4-4V7V6.586l-0.293-0.293l-6-6L22.414,0L22.414,0z"></path></g></g><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#004B71" points="22,1 22,7 28,7 	"></polygon><g><path fill="#004B71" d="M23,17H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,16,9,16h14c0.276,0,0.5,0.224,0.5,0.5S23.276,17,23,17z"></path><path fill="#004B71" d="M23,21H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,20,9,20h14c0.276,0,0.5,0.224,0.5,0.5S23.276,21,23,21z"></path><path fill="#004B71" d="M19,25H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,24,9,24h10c0.276,0,0.5,0.224,0.5,0.5S19.276,25,19,25z"></path><g><path fill="#004B71" d="M8.754,12.977C8.771,12.985,8.766,12.983,8.754,12.977L8.754,12.977z"></path><path fill="#004B71" d="M8.685,12.944c0.029,0.014,0.055,0.026,0.069,0.033C8.742,12.971,8.72,12.961,8.685,12.944z"></path><path fill="#004B71" d="M14.939,12.182L12.193,6.49c-0.2-0.413-0.827-0.413-1.027,0l-2.747,5.692 c-0.136,0.283-0.017,0.625,0.266,0.762c0.282,0.136,0.625,0.017,0.762-0.266L10.256,11h2.846l0.81,1.678 C14.231,13.339,15.259,12.844,14.939,12.182z M10.739,10l0.94-1.949L12.62,10H10.739z"></path><path fill="#004B71" d="M8.685,12.944C8.544,12.875,8.614,12.91,8.685,12.944L8.685,12.944z"></path></g></g><g><path fill="#FFFFFF" d="M23,16H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,15,9,15h14c0.276,0,0.5,0.224,0.5,0.5S23.276,16,23,16z"></path><path fill="#FFFFFF" d="M23,20H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,19,9,19h14c0.276,0,0.5,0.224,0.5,0.5S23.276,20,23,20z"></path><path fill="#FFFFFF" d="M19,24H9c-0.276,0-0.5-0.224-0.5-0.5S8.724,23,9,23h10c0.276,0,0.5,0.224,0.5,0.5S19.276,24,19,24z"></path><g><path fill="#FFFFFF" d="M8.754,11.977C8.771,11.985,8.766,11.983,8.754,11.977L8.754,11.977z"></path><path fill="#FFFFFF" d="M8.685,11.944c0.029,0.014,0.055,0.026,0.069,0.033C8.742,11.971,8.72,11.961,8.685,11.944z"></path><path fill="#FFFFFF" d="M14.939,11.182L12.193,5.49c-0.2-0.413-0.827-0.413-1.027,0l-2.747,5.692 c-0.136,0.283-0.017,0.625,0.266,0.762c0.282,0.136,0.625,0.017,0.762-0.266L10.256,10h2.846l0.81,1.678 C14.231,12.339,15.259,11.844,14.939,11.182z M10.739,9l0.94-1.949L12.62,9H10.739z"></path><path fill="#FFFFFF" d="M8.685,11.944C8.544,11.875,8.614,11.91,8.685,11.944L8.685,11.944z"></path></g></g></g><g></g></svg>`;
+        }
+    </script>
+</body>
+
+</HTML>
